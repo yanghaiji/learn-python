@@ -66,7 +66,7 @@ class List(object):
             print "%s not found"% str(item)
             return
 
-    # 删除链表中的某个结点
+    # 找到列表中第一个含有某值的结点并删除
     def deleteNode(self, item):
         dataNode = Node(item)
         preNode = None
