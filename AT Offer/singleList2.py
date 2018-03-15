@@ -9,11 +9,17 @@
 class Solution:
     def FindKthToTail(self, head, k):
         # write code here
-        tempNode = head
-        tempList = []
-        while tempNode:
-            tempList.append(tempNode)
-            tempNode = tempNode.next
-        if k > len(tempList) or k <1:
+        if k <= 0 or head == None:
             return
-        return tempList[-k]
+        tempNode = head
+        temp = 0
+        beforeNode = head
+        while tempNode:
+            tempNode = tempNode.next
+            temp += 1
+            if temp > k:
+                beforeNode = beforeNode.next
+        if temp < k:
+            return
+        return beforeNode
+            
