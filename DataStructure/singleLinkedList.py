@@ -27,7 +27,7 @@ class List(object):
     # 在链表尾增加一个元素
     def appendNode(self, dataNode):
         tempNode = Node(dataNode)
-        #判断是否为头结点
+
         if self.isEmpty():
             self.head = tempNode
             self.length += 1
@@ -42,34 +42,45 @@ class List(object):
     def searchNode(self, item):
         tempNode = self.head
         foundNode = False
-        while tempNode._next and not foundNode:
+        while tempNode and not foundNode:
             if tempNode.data == item:
                 foundNode = True
             tempNode = tempNode._next
         return foundNode
+
+    # 查找一个结点的索引
+    def searchIndex(self, item):
+        dataNode = Node(item)
+        if self.isEmpty():
+            print "The singleList is Empty!"
+            return
+        index = 0
+        tempNode = self.head
+        while tempNode:
+            if tempNode.data == dataNode.data:
+                return index
+            tempNode = tempNode._next
+            index += 1
+
+        if index == self.length:
+            print "%s not found"% str(item)
+            return
 
     # 删除链表中的某个结点
     def deleteNode(self, item):
         dataNode = Node(item)
         preNode = None
         tempNode = self.head
-        while tempNode._next:
+        while tempNode:
             if tempNode.data == dataNode.data:
                 if preNode:
                     preNode._next = tempNode._next
                 else:
                     self.head = tempNode._next
+                self.length -= 1
                 break
             else:
                 preNode = tempNode
                 tempNode = tempNode._next
-
-
-if __name__ == "__main__":
-    singleLinkedList = List()
-    for item in range(10):
-        singleLinkedList.appendNode(item)
-    print singleLinkedList.searchNode(8)
-    print singleLinkedList.deleteNode(8)
-    print singleLinkedList.searchNode(8)
+    
 
