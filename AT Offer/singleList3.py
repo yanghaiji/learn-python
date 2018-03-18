@@ -1,6 +1,6 @@
 # coding:utf-8
 
-# 合并两个排序的链表
+# 非递归合并两个排序的链表
 from singleLinkedList import List
 
 class ListNode:
