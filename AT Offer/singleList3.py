@@ -1,7 +1,6 @@
 # coding:utf-8
 
 # 非递归合并两个排序的链表
-from singleLinkedList import List
 
 class ListNode:
     def __init__(self, x):
