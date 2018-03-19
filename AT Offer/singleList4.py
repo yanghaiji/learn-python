@@ -6,7 +6,7 @@ class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
-        
+
 class Solution:
     # 返回ListNode
     def ReverseList(self, pHead):
@@ -20,3 +20,19 @@ class Solution:
             result = pHead
             pHead = temp
         return result
+
+def test():
+    head = ListNode(1)
+    p1 = ListNode(2)
+    p2 = ListNode(3)
+    head.next = p1
+    p1.next = p2
+
+    a = Solution()
+    b = a.ReverseList(head)
+    while b:
+        print b.val
+        b = b.next
+
+if __name__ == "__main__":
+    test()
