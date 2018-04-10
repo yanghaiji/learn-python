@@ -15,3 +15,4 @@ def fibonacci(n):
             result.append(result[-1] + result[-2])
     return result
 
+print fibonacci(3)
