@@ -27,8 +27,9 @@ def test_kwargs_call(arg1, arg2, arg3):
 
 if __name__ == "__main__":
     test_args(1, 2, 3)
+
     test_kwargs(a=1,b=2)
-    #调用
+
     args = (1, 2, 3)
     test_args_call(*args)
 
