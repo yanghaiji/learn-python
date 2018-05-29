@@ -6,8 +6,7 @@ author: ben
 date: 2018-05-28
 """
 
-import pandas as pd
-from pandas import Series, DataFrame
+from pandas import Series
 
 a = Series([1, 2, 3, 4])
 #Series的字符串表现形式是：索引在左边，值在右边，没有指定索引，则自动创建
