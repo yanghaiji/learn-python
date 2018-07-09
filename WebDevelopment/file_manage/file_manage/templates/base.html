@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href='{{ request.script_root }}/static/css/vendor/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='{{ request.script_root }}/static/css/style.css' rel='stylesheet' type='text/css'>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    <div class="navspace">
+        <div class="navbar navbar-inverse home">
+            <div>
+                <div class="col-md-3" style="text-align:center">
+                    <a class="navigation-link" href="{{ request.script_root }}/homepage">首页</a>
+                    <a class="navigation-link" href="{{ request.script_root }}/upload">上传列表</a>
+                    <a class="navigation-link" href="{{ request.script_root }}/download">下载列表</a>
+                </div>
+                <div class="col-md-6" style="text-align:center">
+                    <span class="logo">文件管理系统</span>
+                </div>
+                <div class="col-md-3" style="text-align:center">
+                    <a class="navtitle navigation-link" href="{{ request.script_root }}/complete">完成列表</a>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    <script type="text/javascript">
+      var urlstr = location.href;
+      var urlstatus=false;
+      $("#nav a").each(function () {
+        if ((urlstr + '/').indexOf($(this).attr('href')) > -1&&$(this).attr('href')!='') {
+          $(this).addClass('curument');
+          urlstatus = true;
+        } else {
+          $(this).removeClass('curument');
+        }
+      });
+      if (!urlstatus)
+      {$("#nav a").eq(0).addClass('curument'); }
+    </script>
+    {% block content %}
+    {% endblock %}
+
+  {% block scripts %}
+  {% endblock %}
+
+
+</body>
+
+</html>
