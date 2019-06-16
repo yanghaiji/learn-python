@@ -14,6 +14,5 @@ walk_max = walk.max()
 # 第一次到达8的时间
 walk_8 = (np.abs(walk) >= 8).argmax()
 print(walk_8)
-print(walk1)
 
 
