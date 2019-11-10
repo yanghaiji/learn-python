@@ -73,4 +73,4 @@ print("-" * 5 + "Add: test2" + "-" * 5)
 
 session.query(Users).filter(Users.name == "test2").delete()
 session.commit()
-print("-" * 5 + "Delete1: test")
+print("-" * 5 + "Delete2: test2")
